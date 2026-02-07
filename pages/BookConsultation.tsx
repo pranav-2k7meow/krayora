@@ -1,9 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Mail, Phone, MessageCircle, CheckCircle, Send } from 'lucide-react';
 import Button from '../components/Button';
 import ScrollReveal from '../components/ScrollReveal';
+import emailjs from '@emailjs/browser';
 
 const BookConsultation: React.FC = () => {
+
+  useEffect(() => {
+  emailjs.init("Xnrfx1Mxh0KnCgy-w");
+}, []);
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -11,6 +17,7 @@ const BookConsultation: React.FC = () => {
     businessName: '',
     message: ''
   });
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -21,18 +28,42 @@ const BookConsultation: React.FC = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate API call for demonstration
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-      setFormData({ name: '', email: '', phone: '', businessName: '', message: '' });
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, 1500);
-  };
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  if (isSubmitting) return;
+  setIsSubmitting(true);
+
+  try {
+    await emailjs.send(
+      "service_0t8218h",
+      "template_yfo8osx",
+      {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        business: formData.businessName,
+        message: formData.message,
+      }
+    );
+
+    setIsSubmitted(true);
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      businessName: '',
+      message: ''
+    });
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } catch (error) {
+    console.error("EmailJS error:", error);
+    alert("Failed to send message. Please try again.");
+  } finally {
+    setIsSubmitting(false);
+  }
+};
+
 
   return (
     <div className="pt-24 min-h-screen bg-slate-50">
