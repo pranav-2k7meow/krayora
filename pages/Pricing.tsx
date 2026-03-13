@@ -69,14 +69,15 @@ const Pricing: React.FC = () => {
                
                <ul className="space-y-4 mb-8 flex-grow">
                  {[
-                   "Everything in Starter",
-                   "5-page website structure",
-                   "Fully custom layout (no templates)",
-                   "Google Maps integration",
-                   "Advanced contact forms",
-                   "Basic conversion optimization",
-                   "~2 week delivery"
-                 ].map((feature, i) => (
+  "Everything in Starter",
+  "5-page website structure",
+  "Fully custom layout (no templates)",
+  "Google Maps integration",
+  "Advanced contact forms",
+  "Admin page to edit website information",
+  "Basic conversion optimization",
+  "~2 week delivery"
+].map((feature, i) => (
                     <li key={i} className="flex items-start">
                       <Check className="w-4 h-4 text-indigo-600 mr-3 flex-shrink-0 mt-1" />
                       <span className="text-slate-900 text-sm font-medium">{feature}</span>
