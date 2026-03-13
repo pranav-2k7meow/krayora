@@ -29,7 +29,7 @@ const Pricing: React.FC = () => {
                <h3 className="text-slate-900 font-bold text-xl mb-2">Starter Presence</h3>
                <p className="text-slate-500 text-sm mb-6">An entry-level option for very small businesses or first-time websites.</p>
                <div className="flex items-baseline mb-6">
-                  <span className="text-3xl font-bold text-slate-900">₹5,000</span>
+                  <span className="text-3xl font-bold text-slate-900">₹12,000</span>
                   <span className="text-slate-500 ml-1 text-sm">/ starting from</span>
                </div>
                
@@ -63,7 +63,7 @@ const Pricing: React.FC = () => {
                <h3 className="text-slate-900 font-bold text-xl mb-2">Business Standard</h3>
                <p className="text-slate-500 text-sm mb-6">The standard for businesses looking to grow and look professional.</p>
                <div className="flex items-baseline mb-6">
-                  <span className="text-4xl font-bold text-slate-900">₹15,000</span>
+                  <span className="text-4xl font-bold text-slate-900">₹27,000</span>
                   <span className="text-slate-500 ml-1 text-sm">/ starting from</span>
                </div>
                
@@ -95,7 +95,7 @@ const Pricing: React.FC = () => {
                <h3 className="text-slate-900 font-bold text-xl mb-2">Premium Presence</h3>
                <p className="text-slate-500 text-sm mb-6">A high-polish option for brands that need to make a strong impression.</p>
                <div className="flex items-baseline mb-6">
-                  <span className="text-3xl font-bold text-slate-900">₹35,000</span>
+                  <span className="text-3xl font-bold text-slate-900">₹42,000</span>
                   <span className="text-slate-500 ml-1 text-sm">/ starting from</span>
                </div>
                
